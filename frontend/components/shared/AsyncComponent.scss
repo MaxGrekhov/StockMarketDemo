@@ -1,0 +1,16 @@
+.async-component-spinner {
+    display: flex;
+    justify-content: center;
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        div:first-child {
+            font-size: 2em;
+        }
+        div:last-child {
+            font-size: 1.5em;
+        }
+    }
+}

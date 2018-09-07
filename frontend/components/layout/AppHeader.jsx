@@ -1,0 +1,20 @@
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+
+import './AppHeader.scss';
+
+export default class AppHeader extends React.Component {
+
+    render() {
+        return (
+            <div className="app-header">
+                <div className="item">
+                    <p><Link to="/">Home</Link></p>
+                </div>
+                <div className="item">
+                    <p><Link to="/dashboard">Dashboard</Link></p>
+                </div>
+            </div>
+        );
+    }
+}

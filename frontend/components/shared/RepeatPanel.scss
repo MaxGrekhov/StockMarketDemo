@@ -1,0 +1,13 @@
+@import 'root/colors.scss';
+.shared-repeatpanel-error {
+    text-align: center;
+    p {
+        margin-bottom: 0.5em;
+        &.title {
+            font-size: 1.5em;
+        }
+        &.sub {
+            font-size: 1.3em;
+        }
+    }
+}

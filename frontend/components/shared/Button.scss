@@ -1,0 +1,14 @@
+.button {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    height: 2.25em;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+    &:hover {
+        border-color: #b5b5b5;
+    }
+}

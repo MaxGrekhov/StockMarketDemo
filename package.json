@@ -26,7 +26,8 @@
     "react-router-dom": "4.x",
     "redux": "4.x",
     "redux-thunk": "2.x",
-    "linq": "3.x"
+    "prop-types": "15.x",
+    "@aspnet/signalr": "1.x"
   },
   "devDependencies": {
     "@babel/core": "7.x",

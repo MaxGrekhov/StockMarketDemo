@@ -2,19 +2,27 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as dashboardActions from 'services/dashboard/dashboardActions';
+import RepeatPanel from 'components/shared/RepeatPanel';
+import * as types from 'services/types';
 
 class Page extends React.Component {
 
-    componentDidMount() {
+
+    getData() {
         this.props.actions.getPriceAsync();
     }
 
+    componentDidMount() {
+        this.getData();
+    }
+
     render() {
-        console.log(this.props.model);
         return (
             <div>
                 <div>APP PAGE</div>
-                <div>{JSON.stringify(this.props.model)}</div>
+                <RepeatPanel actionId={types.DASHBOARD_GETPRICEASYNC} action={() => this.getData()}>
+                    <div>{JSON.stringify(this.props.model)}</div>
+                </RepeatPanel>
             </div>
 
         );
@@ -23,8 +31,7 @@ class Page extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        model: state.dashboard.model,
-        loader: state.loader
+        model: state.dashboard.model
     };
 }
 

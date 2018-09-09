@@ -11,9 +11,10 @@ export default function (state = initialState, action) {
             if (item && item.number > action.number)
                 return state;
             const newItem = {
-                id: action.id,
                 number: action.number,
-                state: action.type,
+                isOk: action.type === types.COMMON_LOADER_OK,
+                isWait: action.type === types.COMMON_LOADER_WAIT,
+                isError: action.type === types.COMMON_LOADER_ERROR,
                 error: action.error
             };
             return { ...state, [action.id]: newItem };

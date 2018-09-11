@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using StockMarketDemo.Controllers;
+using Microsoft.EntityFrameworkCore;
+using StockMarketDemo.Database;
 
 namespace StockMarketDemo
 {
@@ -28,6 +30,8 @@ namespace StockMarketDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddDbContext<DatabaseContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSignalR();
         }

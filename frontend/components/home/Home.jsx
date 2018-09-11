@@ -15,6 +15,7 @@ class Page extends React.Component {
     }
 
     render() {
+        console.log("render", this.props.messages, this.props.users)
         return (
             <div>
                 <p>User: <input type="text" value={this.props.item.user} onChange={e => this.onChange('user', e.target.value)} /></p>
@@ -22,9 +23,12 @@ class Page extends React.Component {
                 <Button onClick={() => this.sendMessage()}>Send</Button>
                 <table>
                     <tbody>
-                        {this.props.messages.map((x, i) => <tr key={i}><td>{x.user}</td><td>{x.message}</td></tr>)}
+                        {this.props.messages.map((x, i) => <tr key={i}><td>{x.user}</td><td>{x.text}</td></tr>)}
                     </tbody>
                 </table>
+                <ul>
+                    {this.props.users.map((x, i) => <li key={i}>{x.name}</li>)}
+                </ul>
             </div>
         );
     }
@@ -34,6 +38,7 @@ function mapStateToProps(state) {
     return {
         item: state.home.item,
         messages: state.home.messages,
+        users: state.home.users,
         itemState: state.loader[types.HOME_SENDMESSAGEASYNC]
     };
 }

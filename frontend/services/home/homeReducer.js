@@ -5,7 +5,8 @@ const initialState = {
         user: '',
         message: ''
     },
-    messages: []
+    messages: [],
+    users: []
 };
 
 export default function (state = initialState, action) {
@@ -15,10 +16,25 @@ export default function (state = initialState, action) {
                 ...state,
                 messages: [...state.messages, action.item]
             };
+        case types.HOME_ADDUSER:
+            return {
+                ...state,
+                users: [...state.users, action.item]
+            };
         case types.HOME_SETITEM:
             return {
                 ...state,
                 item: action.item
+            };
+        case types.HOME_SETUSERS:
+            return {
+                ...state,
+                users: action.users
+            };
+        case types.HOME_SETMESSAGES:
+            return {
+                ...state,
+                messages: action.messages
             };
         default:
             return state;

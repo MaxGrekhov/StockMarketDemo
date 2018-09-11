@@ -10,9 +10,30 @@ export function setItem(item) {
     };
 }
 
+export function setMessages(messages){
+    return {
+        type: types.HOME_SETMESSAGES,
+        messages
+    };
+}
+
+export function setUsers(users){
+    return {
+        type: types.HOME_SETUSERS,
+        users
+    };
+}
+
 export function addMessage(item) {
     return {
         type: types.HOME_ADDMESSAGE,
+        item
+    };
+}
+
+export function addUser(item) {
+    return {
+        type: types.HOME_ADDUSER,
         item
     };
 }
